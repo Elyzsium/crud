@@ -73,7 +73,7 @@ const Add: Component = () => {
         />
         </div>
         <div class="relative mb-4">
-        <label for="salary" class="leading-7 text-sm text-gray-600">Salary (₦)</label>
+        <label for="salary" class="leading-7 text-sm text-gray-600">Salary ($)</label>
         <input
           id="salary"
           type="number"
