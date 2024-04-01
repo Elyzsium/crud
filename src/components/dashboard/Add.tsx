@@ -1,3 +1,4 @@
+ 
 import { Component, createSignal } from 'solid-js';
 import Swal from 'sweetalert2';
 import { store, setStore } from '../../store';
@@ -45,6 +46,7 @@ const Add: Component = () => {
           type="text"
           value={firstName()}
           onInput={(e) => setFirstName(e.currentTarget.value)}
+          placeholder='input firstname'
           class="w-full bg-white rounded border border-gray-300 focus:border-green-800 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
         />
         </div>
@@ -55,6 +57,7 @@ const Add: Component = () => {
           type="text"
           value={lastName()}
           onInput={(e) => setLastName(e.currentTarget.value)}
+          placeholder='input lastName'
           class="w-full bg-white rounded border border-gray-300 focus:border-green-800 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
         />
         </div>
@@ -65,16 +68,18 @@ const Add: Component = () => {
           type="email"
           value={email()}
           onInput={(e) => setEmail(e.currentTarget.value)}
+          placeholder='input email'
           class="w-full bg-white rounded border border-gray-300 focus:border-green-800 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
         />
         </div>
         <div class="relative mb-4">
-        <label for="salary" class="leading-7 text-sm text-gray-600">Salary ($)</label>
+        <label for="salary" class="leading-7 text-sm text-gray-600">Salary (₦)</label>
         <input
           id="salary"
           type="number"
           value={salary()}
           onInput={(e) => setSalary(e.currentTarget.value)}
+          placeholder='input salary'
           class="w-full bg-white rounded border border-gray-300 focus:border-green-800 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
         />
         </div>
@@ -88,9 +93,9 @@ const Add: Component = () => {
           class="w-full bg-white rounded border border-gray-300 focus:border-green-800 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
         />
         </div>
-        <div class='mt-10'>
-          <button class=" bg-blue-200 rounded border border-gray-300 focus:border-green-800 text-base text-gray-700 py-1 px-5 leading-8" type="submit" >Add</button>
-          <button class=" bg-red-200 rounded border border-gray-300 focus:border-green-800 text-base text-gray-700 py-1 px-5 leading-8 ml-8" type="button" onClick={() =>  setStore('isAdding', false)}>Cancel</button>
+        <div class='mt-10 flex flex-col md:flex-row gap-3'>
+          <button class="bg-blue-200 rounded border border-gray-300 focus:border-green-800 text-base text-gray-700 py-1 px-5 leading-8 mb-2 md:mb-0 md:mr-4" type="submit" >Add</button>
+          <button class="bg-red-200 rounded border border-gray-300 focus:border-green-800 text-base text-gray-700 py-1 px-5 leading-8" type="button" onClick={() =>  setStore('isAdding', false)}>Cancel</button>
         </div>
       </form>
     </div>
@@ -100,9 +105,3 @@ const Add: Component = () => {
 };
 
 export default Add;
-
-
-
-
-
-

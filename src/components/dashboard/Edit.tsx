@@ -70,9 +70,9 @@ const Edit: Component<{ employeeId: number }> = (props) => {
         <label for="date" class="leading-7 text-sm text-gray-600">Date</label>
         <input id="date" type="date" class="w-full bg-white rounded border border-gray-300 focus:border-green-800 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={date()} onInput={(e) => setDate(e.currentTarget.value)} />
         </div>
-        <div style={{ 'margin-top': '20px' }}>
-          <button type="submit"  class=" bg-blue-200 rounded border border-gray-300 focus:border-green-800 text-base text-gray-700 py-1 px-5 leading-8">Update</button>
-          <button type="button"class="bg-red-200 rounded border border-gray-300 focus:border-green-800 text-base text-gray-700 py-1 px-5 ml-8 leading-8" onClick={() => setStore('isEditing', false)}>Cancel</button>
+        <div class='mt-10 flex flex-col md:flex-row gap-3'>
+          <button type="submit" class="bg-blue-200 rounded border border-gray-300 focus:border-green-800 text-base text-gray-700 py-1 px-5 leading-8 mb-2 md:mb-0 md:mr-4" >Update</button>
+          <button type="button" class="bg-red-200 rounded border border-gray-300 focus:border-green-800 text-base text-gray-700 py-1 px-5 leading-8 " onClick={() => setStore('isEditing', false)}>Cancel</button>
         </div>
       </form>
       </div>
