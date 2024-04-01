@@ -45,11 +45,11 @@ const Edit: Component<{ employeeId: number }> = (props) => {
   };
 
   return (
-    <div class="text-3xl">
-    <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+    <div class="items-center justify-center ">
+    <div class="container px-5 py-5 mx-auto flex flex-wrap items-center">
     <div class="rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 bg-slate-100">
       <form onSubmit={handleUpdate}>
-        <h1>Edit Employee</h1>
+      <h1 class="text-xl font-bold mb-2">Edit Employee</h1>
         <div class="relative mb-4">
         <label for="firstName" class="leading-7 text-sm text-gray-600">First Name</label>
         <input id="firstName" type="text" class="w-full bg-white rounded border border-gray-300 focus:border-green-800 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={firstName()} onInput={(e) => setFirstName(e.currentTarget.value)} />

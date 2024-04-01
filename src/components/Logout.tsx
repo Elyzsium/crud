@@ -32,8 +32,7 @@ const Logout: Component<LogoutProps> = (props) => {
 
   return (
     <button
-      style={{ 'margin-left': '12px' }}
-      class="muted-button"
+    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 ml-8 rounded focus:outline-none focus:shadow-outline"
       onClick={handleLogout}
     >
       Logout

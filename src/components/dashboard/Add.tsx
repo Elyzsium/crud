@@ -33,11 +33,11 @@ const Add: Component = () => {
 
 
   return (
-    <div class="items-center justify-center h-screen ">
-    <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+    <div class="items-center justify-center ">
+    <div class="container px-5 py-5 mx-auto flex flex-wrap items-center">
     <div class="rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 bg-slate-100">
        <form onSubmit={handleAdd}>
-       <h1 class="text-xl font-bold mb-8">Add Employee</h1>
+       <h1 class="text-xl font-bold mb-2">Add Employee</h1>
         <div class="relative mb-4">
         <label for="firstName" class="leading-7 text-sm text-gray-600">First Name</label>
         <input
@@ -90,7 +90,7 @@ const Add: Component = () => {
         </div>
         <div class='mt-10'>
           <button class=" bg-blue-200 rounded border border-gray-300 focus:border-green-800 text-base text-gray-700 py-1 px-5 leading-8" type="submit" >Add</button>
-          <button class=" bg-red-200 rounded border border-gray-300 focus:border-green-800 text-base text-gray-700 py-1 px-5 leading-8 ml-8" type="button" onClick={() => setStore('isEditing', false)}>Cancel</button>
+          <button class=" bg-red-200 rounded border border-gray-300 focus:border-green-800 text-base text-gray-700 py-1 px-5 leading-8 ml-8" type="button" onClick={() =>  setStore('isAdding', false)}>Cancel</button>
         </div>
       </form>
     </div>

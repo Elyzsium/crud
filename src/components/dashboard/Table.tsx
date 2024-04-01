@@ -31,40 +31,42 @@ type TableProps = {
   };
 
   return (
-    <div class="contain-table">
-      <table class="striped-table">
+    <div class="relative rounded-xl overflow-auto">
+   <div class="shadow-sm my-8">
+   <table class="border-collapse table-auto w-full text-sm">
         <thead>
           <tr>
-            <th>No.</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Salary</th>
-            <th>Date</th>
-            <th colSpan={2} class="text-center">Actions</th>
+          <th class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-100 dark:text-slate-600 text-left"> No.</th>
+          <th class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-100 dark:text-slate-600 text-left"> First Name</th>
+          <th class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-100 dark:text-slate-600 text-left"> Last Name</th>
+          <th class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-100 dark:text-slate-600 text-left"> Email</th>
+          <th class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-100 dark:text-slate-600 text-left"> Salary</th>
+          <th class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-100 dark:text-slate-600 text-left"> Date</th>
+          <th class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-100 dark:text-slate-600 text-center" colSpan={2}>Actions</th>
           </tr>
         </thead>
-        <tbody>
-          <For each={store.employees} fallback={<tr><td colSpan={7}>No Employees</td></tr>}>
+        <tbody class="bg-slate-800">
+          <For each={store.employees} fallback={<tr><td colSpan={7}></td></tr>}>
             {(employee, i) => (
               <tr>
-                <td>{i() + 1}</td>
-                <td>{employee.firstName}</td>
-                <td>{employee.lastName}</td>
-                <td>{employee.email}</td>
-                <td>{formatter.format(employee.salary)}</td>
-                <td>{employee.date}</td>
-                <td class="text-right">
-                  <button onClick={() => handleEdit(employee.id)} class="button muted-button">Edit</button>
+                  <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"> {i() + 1}</td>
+                  <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"> {employee.firstName}</td>
+                  <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"> {employee.lastName}</td>
+                  <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"> {employee.email}</td>
+                  <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"> {formatter.format(employee.salary)}</td>
+                  <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"> {employee.date}</td>
+                  <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"> 
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={() => handleEdit(employee.id)}>Edit</button>
                 </td>
                 <td class="text-left">
-                  <button onClick={() => handleDelete(employee.id)} class="button muted-button">Delete</button>
+                  <button  class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleDelete(employee.id)} >Delete</button>
                 </td>
               </tr>
             )}
           </For>
         </tbody>
       </table>
+    </div>
     </div>
   );
 };

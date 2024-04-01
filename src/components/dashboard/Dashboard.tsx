@@ -43,7 +43,8 @@ const Dashboard: Component<{ setIsAuthenticated: (auth: boolean) => void }> = (p
   };
 
   return (
-    <div class="container">
+    <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+    <div class="rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 bg-slate-100">
       <Header setIsAdding={(value) => setStore('isAdding', value)} setIsAuthenticated={props.setIsAuthenticated} />
       
       {!store.isAdding && !store.isEditing && (
@@ -52,6 +53,7 @@ const Dashboard: Component<{ setIsAuthenticated: (auth: boolean) => void }> = (p
 
       {store.isAdding && <Add />}
       {store.isEditing && store.selectedEmployee && <Edit employeeId={store.selectedEmployee.id} />}
+    </div>
     </div>
   );
 };
